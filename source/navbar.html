@@ -1,49 +1,47 @@
-<div class="logo"><i class="fas fa-meteor fa-2x"></i>Logo</div>
-<ul class="menu">
-    <li><a href="/index.html">Home</a></li>
-    <li><a href="/about.html">About</a></li>
-    <li><a href="/contact.html">Contact</a></li>
-  <li><a href="/privacy.html">Privacy</a></li>
-</ul>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 
+  <!-- Brand -->
+  <a class="navbar-brand" href="https://fancyletters.org/">Home</a>
 
-<style>
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-       /* menu bar */
-.navbar{
-    min-height: 10vh;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: solid 3px gray;
-    box-shadow: 2px 2px 35px 2px #8a8a1d;
-    padding:12px 28px;
-    font-weight: 700;
-    font-size: larger;
-    align-items: center;
-    letter-spacing: 3px;
-}
-.navbar i{
-    color:#8a8a1d;
-}
-.navbar .menu, .navbar .login-menu{
-display: flex;
-}
-.navbar ul{
-    list-style: none;
-}
-
-.navbar .menu a, .navbar .login-menu li{
-  margin-right:38px;
-  text-decoration: none;  
-  color:rgb(75, 75, 44)
-}
- </style>
-
-  <script>
-      const li = document.querySelectorAll('.menu li')[0]
-      li.addEventListener('click', (e)=>{
-          e.preventDefault()
-          alert('Home Clicked')
-          window.location.href='/index.html'
-      })
-  </script>
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="https://fancyletters.org/about.html">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://fancyletters.org/contact.html">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://fancyletters.org/privacy.html">Privacy</a>
+      </li>
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="https://fancyletters.org/" id="navbardrop1" data-toggle="dropdown">
+          Font Generator
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="https://fancyletters.org/cute-fonts-copy-and-paste.html">Cute Fonts</a>
+          <a class="dropdown-item" href="https://fancyletters.org/fancy-text-generator.html">Fancy Text</a>
+          <a class="dropdown-item" href="https://fancyletters.org/zalgo-font-generator.html">Zalgo Font</a>
+          <a class="dropdown-item" href="https://fancyletters.org/cursive-font-generator.html">Cursive Font</a>
+          <a class="dropdown-item" href="https://fancyletters.org/fancy-font-generator.html">Fancy Font</a>
+        </div>
+        <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="https://fancyletters.org/" id="navbardrop2" data-toggle="dropdown">
+          Symbols
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="https://fancyletters.org/symbols/christmas.html">Christmas</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
