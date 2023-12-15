@@ -1,7 +1,7 @@
 body {
         font-family: 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
+        margin: 20px;
+        padding: 20px;
         background-color: #f8f8f8;
         color: #333;
     }
@@ -22,6 +22,16 @@ body {
         color: #007BFF;
     }
 
+    h2 {
+    color: #007BFF;
+    
+    }
+
+    .alphabet-idea {
+    margin-bottom: 40px;
+    }
+
+
     footer {
         background-color: #333;
         color: #fff;
@@ -30,4 +40,3 @@ body {
         bottom: 0;
         width: 100%;
     }
-</style>
