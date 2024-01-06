@@ -28,6 +28,8 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-infinitescroll/3.0.6/infinite-scroll.pkgd.min.js"></script>
+
   <link rel="stylesheet" href="style.css">
 
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
@@ -1253,6 +1255,22 @@
     <p>Take inspiration from nature for your letters. Use floral motifs, vines, or tree branches to embellish your
       alphabet.</p>
   </div>
+
+
+
+  <div class="container" data-infinite-scroll='{ "path": ".pagination__next", "debug": true}'>
+  </div>
+
+  <div class="page-load-status">
+
+    <p class="infinite-scroll-request">Loading...</p>
+    <p class="infinite-scroll-last">End of content</p>
+    <p class="infinite-scroll-error">No more pages to load</p>
+  </div>
+
+  <p>
+    <a class="pagination__next" href="https://fancyletters.org/a-in-different-fonts.html">Next page</a>
+  </p>
 
 </body>
 
