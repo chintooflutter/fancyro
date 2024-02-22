@@ -89,7 +89,7 @@
   <h1 style="text-align:center;">Fancy Letter A in Different Fonts Copy and Paste 2024</h1>
 
 
-  <textarea autofocus class="form-control fancytext"
+  <textarea class="form-control fancytext"
     style="width:100%; margin-top:5px; background-color:#333333 !important; color:#ffffff" required="required"
     name="text" placeholder="Type or paste text here.." value="">a</textarea>
   <br />
@@ -1055,7 +1055,7 @@
         if ($.trim($(this).val()) != '') {
           generateFancy($(this).val());
         } else {
-          generateFancy("Preview Text");
+          generateFancy("a");
         }
       });
       var ct = 89;
@@ -1083,7 +1083,7 @@
         $(this).html('Loading...');
         var text = $.trim($(".fancytext").val());
         if (text == '') {
-          text = 'Preview Text';
+          text = 'a';
         }
         var that = $(this);
         var intvl = setInterval(function () {that.html('Load More'); clearInterval(intvl);}, 1000);
