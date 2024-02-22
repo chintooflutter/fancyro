@@ -90,7 +90,7 @@
 
 
   <textarea class="form-control fancytext" style="width:100%; margin-top:5px; background-color:#333333 !important;   
-      color:#ffffff" required="required" name="text" placeholder="Type or paste text here.." value=""></textarea>
+      color:#ffffff" required="required" name="text" placeholder="Type or paste text here.." value="">p</textarea>
   <br />
   <div id="result">
     <div class="input-group mb-3">
@@ -1043,18 +1043,18 @@
 
   <script>
     $(function () {
-      /*if($.trim($("#fancytext").val())!='') { 
-         generateFancy($("#fancytext").val());
-       } else {
-        generateFancy("Preview Text");
-       }*/
+      if ($.trim($("#fancytext").val()) != '') {
+        generateFancy($("#fancytext").val());
+      } else {
+        generateFancy("p");
+      }
 
       $(".fancytext").keyup(function () {
         $(".fancytext").val($(this).val());
         if ($.trim($(this).val()) != '') {
           generateFancy($(this).val());
         } else {
-          generateFancy("Preview Text");
+          generateFancy("p");
         }
       });
       var ct = 89;
@@ -1082,7 +1082,7 @@
         $(this).html('Loading...');
         var text = $.trim($(".fancytext").val());
         if (text == '') {
-          text = 'Preview Text';
+          text = 'p';
         }
         var that = $(this);
         var intvl = setInterval(function () {that.html('Load More'); clearInterval(intvl);}, 1000);
