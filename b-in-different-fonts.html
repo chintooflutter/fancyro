@@ -1043,11 +1043,11 @@
 
   <script>
     $(function () {
-      /*if($.trim($("#fancytext").val())!='') { 
-         generateFancy($("#fancytext").val());
-       } else {
-        generateFancy("Preview Text");
-       }*/
+      if ($.trim($("#fancytext").val()) != '') {
+        generateFancy($("#fancytext").val());
+      } else {
+        generateFancy("b");
+      }
 
       $(".fancytext").keyup(function () {
         $(".fancytext").val($(this).val());
