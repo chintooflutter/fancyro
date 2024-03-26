@@ -9,20 +9,14 @@ footerTemplate.innerHTML = `
  
  </link>
  
-<footer 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-        <li class="nav-item">
-          <a class="nav-link" href="https://fancyletters.org/about.html">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://fancyletters.org/contact.html">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://fancyletters.org/privacy.html">Privacy</a>
-        </li>
-    </div>  
-  </nav>
+<footer class="container-fluid text-center">
+<div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="https://fancyletters.org/">Home</a></li>
+        <li><a href="https://fancyletters.org/about.html">About</a></li>
+        <li><a href="https://fancyletters.org/privacy.html">Privacy</a></li>        
+        <li><a href="https://fancyletters.org/contact.html">Contact</a></li>
+    </ul>
 </footer>
   
 `;
