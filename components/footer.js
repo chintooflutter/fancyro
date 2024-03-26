@@ -19,12 +19,9 @@ footerTemplate.innerHTML = `
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="https://fancyletters.org/cute-fonts-copy-and-paste.html">Cute Fonts</a>
-    <a class="nav-link" href="https://fancyletters.org/fancy-text-generator.html">Fancy Text</a>
-    <a class="nav-link" href="https://fancyletters.org/zalgo-font-generator.html">Zalgo Font</a>
-    <a class="nav-link" href="https://fancyletters.org/cursive-font-generator.html">Cursive Font</a>
-    <a class="nav-link" href="https://fancyletters.org/fancy-font-generator.html">Fancy Font</a>        
-    <a class="nav-link" href="https://fancyletters.org/symbols/christmas.html">Christmas Symbols</a>
+        <a class="nav-link" href="https://fancyletters.org/about.html">About</a>
+        <a class="nav-link" href="https://fancyletters.org/contact.html">Contact</a>
+        <a class="nav-link" href="https://fancyletters.org/privacy.html">Privacy</a>    
       </div>
     </div>
   </div>
