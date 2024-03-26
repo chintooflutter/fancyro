@@ -31,6 +31,9 @@
 
   <link rel="stylesheet" href="style.css">
 
+  <script src="components/header.js" type="text/javascript" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
+
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 
 </head>
@@ -1043,11 +1046,11 @@
 
   <script>
     $(function () {
-      if($.trim($("#fancytext").val())!='') { 
-         generateFancy($("#fancytext").val());
-       } else {
+      if ($.trim($("#fancytext").val()) != '') {
+        generateFancy($("#fancytext").val());
+      } else {
         generateFancy("e");
-       }
+      }
 
       $(".fancytext").keyup(function () {
         $(".fancytext").val($(this).val());
