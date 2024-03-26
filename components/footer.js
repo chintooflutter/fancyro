@@ -9,8 +9,9 @@ footerTemplate.innerHTML = `
  
  </link>
  
-<footer class="navbar">
-     <ul class="navbar-nav">
+<footer 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
         <li class="nav-item">
           <a class="nav-link" href="https://fancyletters.org/about.html">About</a>
         </li>
@@ -20,6 +21,8 @@ footerTemplate.innerHTML = `
         <li class="nav-item">
           <a class="nav-link" href="https://fancyletters.org/privacy.html">Privacy</a>
         </li>
+    </div>  
+  </nav>
 </footer>
   
 `;
