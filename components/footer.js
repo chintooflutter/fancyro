@@ -9,16 +9,29 @@ footerTemplate.innerHTML = `
  
  </link>
  
-<footer class="container-fluid text-center">
-<div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="https://fancyletters.org/">Home</a></li>
-        <li><a href="https://fancyletters.org/about.html">About</a></li>
-        <li><a href="https://fancyletters.org/privacy.html">Privacy</a></li>        
-        <li><a href="https://fancyletters.org/contact.html">Contact</a></li>
-    </ul>
+<footer>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://fancyletters.org/">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="https://fancyletters.org/cute-fonts-copy-and-paste.html">Cute Fonts</a>
+    <a class="nav-link" href="https://fancyletters.org/fancy-text-generator.html">Fancy Text</a>
+    <a class="nav-link" href="https://fancyletters.org/zalgo-font-generator.html">Zalgo Font</a>
+    <a class="nav-link" href="https://fancyletters.org/cursive-font-generator.html">Cursive Font</a>
+    <a class="nav-link" href="https://fancyletters.org/fancy-font-generator.html">Fancy Font</a>        
+    <a class="nav-link" href="https://fancyletters.org/symbols/christmas.html">Christmas Symbols</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
 </footer>
-  
+ 
 `;
 
 class Footer extends HTMLElement {
