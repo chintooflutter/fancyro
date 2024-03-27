@@ -12,24 +12,39 @@ headerTemplate.innerHTML = `
   
 
 <header>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 
+  <!-- Brand -->
+  <a class="navbar-brand" href="https://fancyletters.org/">Home</a>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="https://fancyletters.org/">Home</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
         <a class="nav-link" href="https://fancyletters.org/cute-fonts-copy-and-paste.html">Cute Fonts</a>
-    <a class="nav-link" href="https://fancyletters.org/fancy-text-generator.html">Fancy Text</a>
-    <a class="nav-link" href="https://fancyletters.org/zalgo-font-generator.html">Zalgo Font</a>
-    <a class="nav-link" href="https://fancyletters.org/cursive-font-generator.html">Cursive Font</a>
-    <a class="nav-link" href="https://fancyletters.org/fancy-font-generator.html">Fancy Font</a>        
-    <a class="nav-link" href="https://fancyletters.org/symbols/christmas.html">Christmas Symbols</a>
-      </div>
-    </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://fancyletters.org/fancy-text-generator.html">Fancy Text</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://fancyletters.org/zalgo-font-generator.html">Zalgo Font</a>
+      </li>                            
+      <li class="nav-item">
+        <a class="nav-link" href="https://fancyletters.org/cursive-font-generator.html">Cursive Font</a>
+      </li>                            
+      <li class="nav-item">
+        <a class="nav-link" href="https://fancyletters.org/fancy-font-generator.html">Fancy Font</a>
+      </li>                            
+      <li class="nav-item">
+        <a class="nav-link" href="https://fancyletters.org/symbols/christmas.html">Christmas Symbols</a>
+      </li>                            
+    </ul>
   </div>
 </nav>
 
