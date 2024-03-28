@@ -1,51 +1,64 @@
-const footerTemplate = document.createElement('template');
-
-footerTemplate.innerHTML = `
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  </link>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
- 
- </link>
- 
-<footer>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="https://fancyletters.org/">Home</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="https://fancyletters.org/about.html">About</a>
-        <a class="nav-link" href="https://fancyletters.org/contact.html">Contact</a>
-        <a class="nav-link" href="https://fancyletters.org/privacy.html">Privacy</a>    
-      </div>
-    </div>
-  </div>
-</nav>
-
-</footer>
- 
-`;
-
-class Footer extends HTMLElement {
+class FooterComponent extends HTMLElement {
   constructor() {
     super();
-  }
 
-  connectedCallback() {
-    const fontAwesome = document.querySelector('link[href*="font-awesome"]');
-    const shadowRoot = this.attachShadow({ mode: 'closed' });
+    this.attachShadow({ mode: "open" });
 
-    if (fontAwesome) {
-      shadowRoot.appendChild(fontAwesome.cloneNode());
-    }
+    const template = document.createElement("template");
+    template.innerHTML = `
+      <style>
+        .footer-links {
+          display: flex;
+          justify-content: space-around;
+          padding: 1rem;
+        }
 
-    shadowRoot.appendChild(footerTemplate.content);
+        .footer-links a {
+          color: rgb(0, 0, 255); /* Blue color */
+          text-decoration: none;
+        }
+
+        .footer-links a:hover {
+          text-decoration: underline;	
+        }
+
+        @media (max-width: 767px) {
+          .footer-links {
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      </style>
+
+      <footer class="bg-body-tertiary">
+        <div class="footer-links">
+          <a href="https://fancyletters.org/a-in-different-fonts.html">A in Different Fonts</a>
+
+          <a href="https://fancyletters.org/a-in-cursive.html">How to Write A in Cursive</a>
+
+          <a href="https://fancyletters.org/about.html">About</a>
+
+          <a href="https://fancyletters.org/contact.html">Contact</a>
+
+      <a href="https://fancyletters.org/privacy.html">Privacy</a>		  
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2024 Copyright:
+          <a class="text-body" href="https://fancyletters.org/sitemap.xml">FancyLetters.org</a>
+        </div>
+        <!-- Copyright -->
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+      </footer>
+    `;
+
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 }
 
-customElements.define('footer-component', Footer);
+customElements.define("footer-component", FooterComponent);
