@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Character Counter Tools for social media, SEO</title>
+  <meta name="description"
+    content="Character Counter Tool helps you track the number of characters, words, sentences, paragraphs, and whitespace in your text. Useful for social media, email, SEO, and meeting word count requirements.">
+  <meta name="keywords"
+    content="Character Counter Tool, Character Counter, characters, words, sentences, word count requirements, whitespace in your text">
+  <meta name="author" content="fancyletters.org">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="style.css">
+
+  <script type="module" src="components/header.js"></script>
+  <script type="module" src="components/footer.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+</head>
+
+<body>
+
+  <header-component></header-component>
+
+  <h1 style="text-align:center;">Character Counter Tool for Social Media</h1>
+
+  <p>A character counter tool can be particularly helpful for social media as it allows you to stay within the character
+    limits set by each platform. For instance, Twitter has a 280 character limit, while Instagram captions truncate
+    after 125 characters. By using a character counter tool, you can ensure that your posts are not cut off or
+    truncated, and that your message is conveyed effectively within the given constraints. Additionally, it can help you
+    optimize your posts for engagement, as studies have shown that shorter posts tend to perform better on social media.
+  </p>
+
+  <div class="container mt-5">
+    <h1 class="text-center mb-5">Character Counter</h1>
+    <textarea class="form-control" id="textArea" rows="10"></textarea>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Other Statistics</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Characters:</td>
+          <td id="characters">0</td>
+        </tr>
+        <tr>
+          <td>Characters (no spaces):</td>
+          <td id="charactersNoSpaces">0</td>
+        </tr>
+        <tr>
+          <td>Words:</td>
+          <td id="words">0</td>
+        </tr>
+        <tr>
+          <td>Sentences:</td>
+          <td id="sentences">0</td>
+        </tr>
+        <tr>
+          <td>Paragraphs:</td>
+          <td id="paragraphs">0</td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-primary btn-block" id="copyBtn">Copy Results</button>
+  </div>
+
+  <script>
+    const textArea = document.getElementById('textArea');
+    const characters = document.getElementById('characters');
+    const charactersNoSpaces = document.getElementById('charactersNoSpaces');
+    const words = document.getElementById('words');
+    const sentences = document.getElementById('sentences');
+    const paragraphs = document.getElementById('paragraphs');
+    const copyBtn = document.getElementById('copyBtn');
+
+    textArea.addEventListener('input', () => {
+      const text = textArea.value;
+      characters.innerText = text.length;
+      charactersNoSpaces.innerText = text.replace(/\s/g, '').length;
+      words.innerText = text.split(/\s+/).filter(word => word.length > 0).length;
+      sentences.innerText = text.split(/[.!?]/).filter(sentence => sentence.length > 0).length;
+      paragraphs.innerText = text.split(/\n/).filter(paragraph => paragraph.length > 0).length;
+    });
+
+    copyBtn.addEventListener('click', () => {
+      const text = `${characters.innerText} characters, ${charactersNoSpaces.innerText} characters (no spaces), ${words.innerText} words, ${sentences.innerText} sentences, ${paragraphs.innerText} paragraphs`;
+      const tempInput = document.createElement('input');
+      tempInput.value = text;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+    });
+  </script>
+
+  <p>A character counter tool is a utility that helps you determine the number of characters, words, sentences,
+    paragraphs, and whitespace in a text. It can be very useful for various purposes, such as:</p>
+
+  <ul>
+    <li><strong>Avoiding character limits:</strong> If you're writing an email, a social media post, or a text message,
+      there might be character limits that you need to adhere to. A character counter tool can help you ensure that your
+      text fits within those limits.</li>
+    <li><strong>Improving readability:</strong> By knowing the number of characters in your text, you can adjust the
+      length of your sentences and paragraphs to make them more readable. Shorter sentences and paragraphs are generally
+      easier to read than longer ones.</li>
+    <li><strong>Optimizing keyword density:</strong> If you're writing for SEO purposes, you might want to optimize the
+      keyword density of your text. A character counter tool can help you determine the frequency of your keywords and
+      adjust them accordingly.</li>
+    <li><strong>Meeting word count requirements:</strong> If you're writing an academic paper, a blog post, or a news
+      article, there might be word count requirements that you need to meet. A character counter tool can help you
+      ensure that your text meets those requirements.</li>
+  </ul>
+
+  <p>Overall, a character counter tool can help you write more effectively and efficiently by providing you with
+    valuable insights into your text.</p>
+
+  <footer-component></footer-component>
+
+</body>
+
+</html>
