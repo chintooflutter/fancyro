@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Symbol Repository</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        .symbols {
+            margin-bottom: 20px;
+        }
+        .symbol {
+            font-size: 24px;
+            margin: 10px;
+            display: inline-block;
+            cursor: pointer;
+            border: 1px solid #ccc; /* Add border */
+            padding: 10px; /* Add padding */
+            border-radius: 5px; /* Add border radius */
+            transition: background-color 0.3s; /* Add transition */
+        }
+        .symbol:hover {
+            background-color: #eaeaea;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Symbol Repository</h1>
+        <p>Welcome to your symbol repository where you can explore various symbols!</p>
+    </header>
+    <div class="container">
+        <h2>Symbol Categories</h2>
+        <p>Select a category to explore:</p>
+        <ul id="category-links">
+            <!-- Category links will be added here using JavaScript -->
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const categories = ['Alphabets', 'Numbers', 'Shapes', 'Arrows', 'Emojis']; // Define symbol categories
+
+            const categoryLinksContainer = document.getElementById('category-links');
+
+            // Function to create category links and pages
+            function createCategoryPages() {
+                categories.forEach(category => {
+                    // Create category link
+                    const categoryLink = document.createElement('li');
+                    categoryLink.innerHTML = `<a href="#${category.toLowerCase()}">${category}</a>`;
+                    categoryLinksContainer.appendChild(categoryLink);
+
+                    // Create category page
+                    const categoryPage = document.createElement('div');
+                    categoryPage.id = category.toLowerCase();
+                    categoryPage.classList.add('symbols');
+                    categoryPage.innerHTML = `<h2>${category}</h2>`;
+                    document.body.appendChild(categoryPage);
+                });
+            }
+
+            // Call the function to create category links and pages
+            createCategoryPages();
+        });
+    </script>
+</body>
+</html>
