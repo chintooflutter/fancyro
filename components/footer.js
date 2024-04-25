@@ -4,9 +4,10 @@ class FooterComponent extends HTMLElement {
 
     this.attachShadow({ mode: "open" });
 
-    this.shadowRoot.innerHTML = `
+    const template = document.createElement("template");
+    template.innerHTML = `
       <style>
-.footer-links {
+        .footer-links {
           display: flex;
           justify-content: space-around;
           padding: 1rem;
@@ -27,17 +28,20 @@ class FooterComponent extends HTMLElement {
             align-items: center;
           }
         }
-
-
       </style>
 
       <footer class="bg-body-tertiary">
         <div class="footer-links">
           <a href="https://fancyletters.org/a-in-different-fonts.html">A in Different Fonts</a>
+
           <a href="https://fancyletters.org/a-in-cursive.html">How to Write A in Cursive</a>
+
           <a href="https://fancyletters.org/about.html">About</a>
+
           <a href="https://fancyletters.org/contact.html">Contact</a>
-          <a href="https://fancyletters.org/privacy.html">Privacy</a>
+
+      <a href="https://fancyletters.org/privacy.html">Privacy</a>		  
+
         </div>
 
         <!-- Copyright -->
@@ -46,8 +50,14 @@ class FooterComponent extends HTMLElement {
           <a class="text-body" href="https://fancyletters.org/sitemap.xml">FancyLetters.org</a>
         </div>
         <!-- Copyright -->
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
       </footer>
     `;
+
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 }
 
