@@ -1,62 +1,58 @@
 body {
-        font-family: 'Arial', sans-serif;
-        font-display: swap;
-        margin: 0px;
-        padding: 20px;
-        background-color: #f8f8f8;
-        color: #333;
-    }
+    font-family: 'Arial', sans-serif;
+    font-display: swap; /* Note that 'font-display' doesn't apply to non-web fonts */
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f8f8;
+    color: #333;
+}
 
-    .container {
-        max-width: 800px;
-        margin: 0 auto; /* This centers the container */
-        padding: 20px;
-        text-align: center;
-    }
+.container {
+    max-width: 800px;
+    margin: 0 auto; /* Centers the container */
+    padding: 20px;
+    text-align: center;
+    display: flex; /* Flexbox for better layout control */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-    img {
-        max-width: 100%;
-        height: auto;
-    }
+img {
+    max-width: 100%; /* Makes images responsive */
+    height: auto;
+}
 
-    h1 {
-        color: #007BFF;
-        padding: 5px 0 15px;
-        float: left;
-        font-weight: 600;
-    }
+h1 {
+    color: #007BFF; /* Consistent with h2 */
+    font-weight: 600; /* Bolder font weight for emphasis */
+    padding: 5px 0 15px; /* Consistent padding */
+}
 
-    h2 {
-      color: #007BFF;
-    }
+h2 {
+    color: #007BFF; /* Removed duplicate style definition */
+}
 
-    h2 {
-      color: #007BFF;
-    }
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures proper table layout */
+    margin-top: 20px;
+}
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 20px;
-    }
+th, td {
+    border: 1px solid #ddd; /* Consistent border styling */
+    padding: 10px;
+    text-align: center;
+}
 
-    th, td {
-        border: 1px solid #ddd;
-        padding: 10px;
-        text-align: center;
-    }
+.alphabet-idea {
+    margin-bottom: 40px; /* Consistent margin */
+}
 
-    .alphabet-idea {
-    margin-bottom: 40px;
-    }
-
-
-    footer {
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
-
+footer {
+    background-color: #333; /* Darker background for footer */
+    color: #fff; /* Text in white for contrast */
+    padding: 10px;
+    position: relative; /* Changed from 'fixed' to avoid overlapping content */
+    width: 100%;
+}
