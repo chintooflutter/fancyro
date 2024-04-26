@@ -6,9 +6,9 @@ class HeaderComponent extends HTMLElement {
       <header>
 
 
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark" width="100%" height="60px">
           <a class="navbar-brand" href="https://fancyletters.org/">Home</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" title="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -43,15 +43,14 @@ class HeaderComponent extends HTMLElement {
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </link>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous" defer></script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous" defer></script>
 
 
     `;
@@ -65,3 +64,66 @@ class HeaderComponent extends HTMLElement {
 }
 
 window.customElements.define('header-component', HeaderComponent);
+
+
+class FooterComponent extends HTMLElement {
+  constructor() {
+    super();
+
+    this.attachShadow({ mode: "open" });
+
+    const template = document.createElement("template");
+    template.innerHTML = `
+      <style>
+        .footer-links {
+          display: flex;
+          justify-content: space-around;
+          padding: 1rem;
+        }
+
+        .footer-links a {
+          color: rgb(0, 0, 255); /* Blue color */
+          text-decoration: none;
+        }
+
+        .footer-links a:hover {
+          text-decoration: underline;	
+        }
+
+        @media (max-width: 767px) {
+          .footer-links {
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      </style>
+
+      <footer class="bg-body-tertiary">
+        <div class="footer-links">
+          <a href="https://fancyletters.org/a-in-different-fonts.html">A in Different Fonts</a>
+
+          <a href="https://fancyletters.org/a-in-cursive.html">How to Write A in Cursive</a>
+
+          <a href="https://fancyletters.org/about.html">About</a>
+
+          <a href="https://fancyletters.org/contact.html">Contact</a>
+
+      <a href="https://fancyletters.org/privacy.html">Privacy</a>		  
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2024 Copyright:
+          <a class="text-body" href="https://fancyletters.org/sitemap.xml">FancyLetters.org</a>
+        </div>
+        <!-- Copyright -->
+
+      </footer>
+    `;
+
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+  }
+}
+
+customElements.define("footer-component", FooterComponent);
