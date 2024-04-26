@@ -57,6 +57,11 @@ th, td {
     margin-bottom: 40px; /* Consistent margin */
 }
 
+.btn.btn-primary {
+  background-color: #ffffff;
+  color: #212529;
+}
+
 .btn.btn-primary.loadmore {
   background-color: #ffffff;
   color: #212529;
