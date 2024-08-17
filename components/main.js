@@ -151,11 +151,11 @@ function saveHtmlToCache(url, htmlContent) {
     caches.open('fancyletters-cache-v1').then(function(cache) {
       const response = new Response(htmlContent, {
         headers: {
-          'Content-Type': 'text/html',
-          'Content-Length': htmlContent.length.toString() // Set the content length
+          'Content-Type': 'text/html'
         }
       });
-      cache.put(url, response);
+      return cache.put(url, response);
+    }).then(() => {
       console.log(`HTML content saved to Cache Storage for URL: ${url}`);
     }).catch(function(error) {
       console.error('Failed to save HTML to Cache Storage:', error);
@@ -163,22 +163,15 @@ function saveHtmlToCache(url, htmlContent) {
   }
 }
 
-
 // Function to retrieve HTML content from Cache Storage
 function getHtmlFromCache(url) {
   if ('caches' in window) {
     return caches.open('fancyletters-cache-v1').then(function(cache) {
       return cache.match(url).then(function(response) {
         if (response) {
-          const contentLength = response.headers.get('Content-Length');
-          if (contentLength && parseInt(contentLength) > 0) {
-            return response.text().then(function(html) {
-              return html;
-            });
-          } else {
-            console.log('Cached content is empty or invalid');
-            return null;
-          }
+          return response.text().then(function(html) {
+            return html;
+          });
         } else {
           console.log('No HTML content found in Cache Storage for:', url);
           return null;
@@ -189,9 +182,8 @@ function getHtmlFromCache(url) {
       return null;
     });
   }
-  return null;
+  return Promise.resolve(null);
 }
-
 
 // Load jQuery safely without using document.write()
 (function() {

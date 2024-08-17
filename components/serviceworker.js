@@ -185,25 +185,6 @@ self.addEventListener('install', (event) => {
   );
 });
 
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      const fetchPromise = fetch(event.request).then((networkResponse) => {
-        if (networkResponse && networkResponse.ok) {
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, networkResponse.clone());
-          });
-        }
-        return networkResponse;
-      }).catch(() => {
-        // Fallback to cache if fetch fails
-        return cachedResponse;
-      });
-      return cachedResponse || fetchPromise;
-    })
-  );
-});
-
 self.addEventListener('activate', (event) => {
   const cacheWhitelist = [CACHE_NAME];
 
@@ -220,4 +201,33 @@ self.addEventListener('activate', (event) => {
   );
 
   self.clients.claim();
+});
+
+self.addEventListener('fetch', (event) => {
+  const requestUrl = new URL(event.request.url);
+
+  // Bypass caching for AdSense requests
+  if (requestUrl.hostname === 'pagead2.googlesyndication.com' || requestUrl.hostname.endsWith('doubleclick.net')) {
+    return; // Bypass fetch event for AdSense requests
+  }
+
+  event.respondWith(
+    caches.match(event.request).then(cachedResponse => {
+      // Serve from cache if found
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+
+      // Fetch from network and cache the response
+      return caches.open(CACHE_NAME).then(cache => {
+        return fetch(event.request).then(response => {
+          // Cache the fetched response if it's not AdSense related
+          if (!requestUrl.hostname.endsWith('googlesyndication.com') && !requestUrl.hostname.endsWith('doubleclick.net')) {
+            cache.put(event.request, response.clone());
+          }
+          return response;
+        });
+      });
+    })
+  );
 });
