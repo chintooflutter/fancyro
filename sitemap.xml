@@ -32,6 +32,12 @@
         <changefreq>daily</changefreq>
         <priority>0.80</priority>
    </url>
+  <url>
+      <loc>https://fancyletters.org/cursive-alphabet.html</loc>
+      <lastmod>2024-08-11T19:10:42+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+   </url> 
    <url>
       <loc>https://fancyletters.org/fancy-text-generator.html</loc>
       <lastmod>2024-08-11T19:10:42+00:00</lastmod>
