@@ -144,7 +144,6 @@ if ('serviceWorker' in navigator) {
 }
 
 
-
 // Function to save custom HTML or data to Cache Storage
 function saveHtmlToCache(url, htmlContent) {
   if ('caches' in window) {
