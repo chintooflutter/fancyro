@@ -24,9 +24,9 @@
   <!-- Other meta tags -->
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
+
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-  
+
   <link
     href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Pacifico&family=Satisfy&family=Tangerine:wght@700&display=swap"
     rel="stylesheet">
@@ -119,196 +119,211 @@
     /* Cursive Writing Practice Styles */
 
     :root {
-        --primary-color: #4CAF50;
-        --primary-hover: #45a049;
-        --secondary-color: #2196F3;
-        --secondary-hover: #1976D2;
-        --background-color: #f5f7fa;
-        --card-background: #ffffff;
-        --text-primary: #333333;
-        --text-secondary: #666666;
-        --border-color: #e0e0e0;
-        --shadow-color: rgba(0, 0, 0, 0.1);
-        --border-radius: 12px;
-        --spacing: 20px;
+      --primary-color: #4CAF50;
+      --primary-hover: #45a049;
+      --secondary-color: #2196F3;
+      --secondary-hover: #1976D2;
+      --background-color: #f5f7fa;
+      --card-background: #ffffff;
+      --text-primary: #333333;
+      --text-secondary: #666666;
+      --border-color: #e0e0e0;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --border-radius: 12px;
+      --spacing: 20px;
     }
 
-        
+
     .container {
-        background: var(--card-background);
-        padding: calc(var(--spacing) * 1.5);
-        border-radius: var(--border-radius);
-        box-shadow: 0 8px 24px var(--shadow-color);
-        width: 100%;
-        max-width: 1000px;
-        margin: 0 auto;
+      background: var(--card-background);
+      padding: calc(var(--spacing) * 1.5);
+      border-radius: var(--border-radius);
+      box-shadow: 0 8px 24px var(--shadow-color);
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
     }
+
     .letter-display {
-        font-size: clamp(80px, 15vw, 150px);
-        text-align: center;
-        color: var(--text-primary);
-        margin: var(--spacing) 0;
-        min-height: 180px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: var(--background-color);
-        border-radius: var(--border-radius);
-        padding: var(--spacing);
+      font-size: clamp(80px, 15vw, 150px);
+      text-align: center;
+      color: var(--text-primary);
+      margin: var(--spacing) 0;
+      min-height: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--background-color);
+      border-radius: var(--border-radius);
+      padding: var(--spacing);
     }
 
     .controls {
-        display: flex;
-        justify-content: center;
-        gap: calc(var(--spacing) / 2);
-        margin: calc(var(--spacing) * 1.5) 0;
-        flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      gap: calc(var(--spacing) / 2);
+      margin: calc(var(--spacing) * 1.5) 0;
+      flex-wrap: wrap;
     }
 
     button {
-        padding: 12px 24px;
-        font-size: 1rem;
-        font-weight: 600;
-        border: none;
-        border-radius: calc(var(--border-radius) / 2);
-        background: var(--primary-color);
-        color: white;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        min-width: 120px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: calc(var(--border-radius) / 2);
+      background: var(--primary-color);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 120px;
     }
 
     button:hover {
-        background: var(--primary-hover);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px var(--shadow-color);
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--shadow-color);
     }
 
     button.download {
-        background: var(--secondary-color);
+      background: var(--secondary-color);
     }
 
     button.download:hover {
-        background: var(--secondary-hover);
+      background: var(--secondary-hover);
     }
 
     #canvas {
-        border: 2px solid var(--border-color);
-        border-radius: var(--border-radius);
-        background: var(--card-background);
-        cursor: crosshair;
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        margin: var(--spacing) 0;
-        touch-action: none;
+      border: 2px solid var(--border-color);
+      border-radius: var(--border-radius);
+      background: var(--card-background);
+      cursor: crosshair;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: var(--spacing) 0;
+      touch-action: none;
     }
 
     .tools {
-        background: var(--background-color);
-        padding: calc(var(--spacing) / 1.5);
-        border-radius: var(--border-radius);
-        margin-top: var(--spacing);
-        display: flex;
-        justify-content: center;
-        gap: calc(var(--spacing) / 1.5);
-        flex-wrap: wrap;
-        align-items: center;
+      background: var(--background-color);
+      padding: calc(var(--spacing) / 1.5);
+      border-radius: var(--border-radius);
+      margin-top: var(--spacing);
+      display: flex;
+      justify-content: center;
+      gap: calc(var(--spacing) / 1.5);
+      flex-wrap: wrap;
+      align-items: center;
     }
 
     .tool-group {
-        display: flex;
-        align-items: center;
-        gap: calc(var(--spacing) / 2);
+      display: flex;
+      align-items: center;
+      gap: calc(var(--spacing) / 2);
     }
 
     #colorPicker {
-        width: 45px;
-        height: 45px;
-        padding: 5px;
-        border: 2px solid var(--border-color);
-        border-radius: calc(var(--border-radius) / 2);
-        cursor: pointer;
+      width: 45px;
+      height: 45px;
+      padding: 5px;
+      border: 2px solid var(--border-color);
+      border-radius: calc(var(--border-radius) / 2);
+      cursor: pointer;
     }
 
-    .size-selector, 
+    .size-selector,
     .font-selector {
-        padding: 10px 15px;
-        border-radius: calc(var(--border-radius) / 2);
-        border: 2px solid var(--border-color);
-        font-size: 1rem;
-        background: var(--card-background);
-        cursor: pointer;
-        transition: border-color 0.3s ease;
+      padding: 10px 15px;
+      border-radius: calc(var(--border-radius) / 2);
+      border: 2px solid var(--border-color);
+      font-size: 1rem;
+      background: var(--card-background);
+      cursor: pointer;
+      transition: border-color 0.3s ease;
     }
 
     .font-selector {
-        min-width: 180px;
+      min-width: 180px;
     }
 
     .size-selector:hover,
     .font-selector:hover {
-        border-color: var(--secondary-color);
+      border-color: var(--secondary-color);
     }
 
     .tool-label {
-        font-size: 1rem;
-        color: var(--text-secondary);
-        font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      font-weight: 600;
     }
 
     /* Font Classes */
-    .dancing-script { font-family: 'Dancing Script', cursive; }
-    .great-vibes { font-family: 'Great Vibes', cursive; }
-    .pacifico { font-family: 'Pacifico', cursive; }
-    .satisfy { font-family: 'Satisfy', cursive; }
-    .tangerine { font-family: 'Tangerine', cursive; }
+    .dancing-script {
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .great-vibes {
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .pacifico {
+      font-family: 'Pacifico', cursive;
+    }
+
+    .satisfy {
+      font-family: 'Satisfy', cursive;
+    }
+
+    .tangerine {
+      font-family: 'Tangerine', cursive;
+    }
 
     /* Responsive Design */
     @media (max-width: 768px) {
-        :root {
-            --spacing: 15px;
-        }
+      :root {
+        --spacing: 15px;
+      }
 
-        .container {
-            padding: var(--spacing);
-        }
+      .container {
+        padding: var(--spacing);
+      }
 
-        h1 {
-            font-size: 2rem;
-        }
+      h1 {
+        font-size: 2rem;
+      }
 
-        .tools {
-            flex-direction: column;
-            align-items: stretch;
-        }
+      .tools {
+        flex-direction: column;
+        align-items: stretch;
+      }
 
-        .tool-group {
-            justify-content: space-between;
-        }
+      .tool-group {
+        justify-content: space-between;
+      }
 
-        .font-selector {
-            width: 100%;
-        }
+      .font-selector {
+        width: 100%;
+      }
 
-        button {
-            width: 100%;
-        }
+      button {
+        width: 100%;
+      }
 
-        .controls {
-            flex-direction: column;
-            gap: calc(var(--spacing) / 2);
-        }
+      .controls {
+        flex-direction: column;
+        gap: calc(var(--spacing) / 2);
+      }
     }
 
     @media (max-width: 480px) {
-        h1 {
-            font-size: 1.75rem;
-        }
+      h1 {
+        font-size: 1.75rem;
+      }
 
-        .letter-display {
-            min-height: 120px;
-        }
+      .letter-display {
+        min-height: 120px;
+      }
     }
   </style>
 
@@ -494,106 +509,106 @@
 
 
 
-      function generateFancyText(text, style) {
-          return text.split('').map(char => style.map[char] || char).join('');
-      }
+    function generateFancyText(text, style) {
+      return text.split('').map(char => style.map[char] || char).join('');
+    }
 
-      function createCategorySection(category) {
-          const section = document.createElement('div');
-          section.className = 'category-section mb-4';
+    function createCategorySection(category) {
+      const section = document.createElement('div');
+      section.className = 'category-section mb-4';
 
-          const header = document.createElement('div');
-          header.className = 'category-header';
-          header.innerHTML = `<h2 class="h4 mb-0">${category.name}</h2>`;
-          section.appendChild(header);
+      const header = document.createElement('div');
+      header.className = 'category-header';
+      header.innerHTML = `<h2 class="h4 mb-0">${category.name}</h2>`;
+      section.appendChild(header);
 
-          const container = document.createElement('div');
-          container.className = 'preview-container';
-          section.appendChild(container);
+      const container = document.createElement('div');
+      container.className = 'preview-container';
+      section.appendChild(container);
 
-          return section;
-      }
+      return section;
+    }
 
-      function createPreviewBox(style, text) {
-          const previewBox = document.createElement('div');
-          previewBox.className = 'preview-box';
+    function createPreviewBox(style, text) {
+      const previewBox = document.createElement('div');
+      previewBox.className = 'preview-box';
 
-          const card = document.createElement('div');
-          card.className = 'card h-100';
+      const card = document.createElement('div');
+      card.className = 'card h-100';
 
-          const cardHeader = document.createElement('div');
-          cardHeader.className = 'card-header d-flex justify-content-between align-items-center';
-          cardHeader.innerHTML = `<h5 class="mb-0 fs-6">${style.name}</h5>`;
+      const cardHeader = document.createElement('div');
+      cardHeader.className = 'card-header d-flex justify-content-between align-items-center';
+      cardHeader.innerHTML = `<h5 class="mb-0 fs-6">${style.name}</h5>`;
 
-          const buttonGroup = document.createElement('div');
-          buttonGroup.className = 'btn-group';
+      const buttonGroup = document.createElement('div');
+      buttonGroup.className = 'btn-group';
 
-          const copyButton = document.createElement('button');
-          copyButton.className = 'btn btn-sm btn-outline-primary action-btn';
-          copyButton.textContent = 'Copy';
-          copyButton.onclick = () => {
-              navigator.clipboard.writeText(text);
-              copyButton.textContent = 'Copied!';
-              setTimeout(() => copyButton.textContent = 'Copy', 2000);
-          };
+      const copyButton = document.createElement('button');
+      copyButton.className = 'btn btn-sm btn-outline-primary action-btn';
+      copyButton.textContent = 'Copy';
+      copyButton.onclick = () => {
+        navigator.clipboard.writeText(text);
+        copyButton.textContent = 'Copied!';
+        setTimeout(() => copyButton.textContent = 'Copy', 2000);
+      };
 
-          const downloadButton = document.createElement('button');
-          downloadButton.className = 'btn btn-sm btn-outline-success action-btn';
-          downloadButton.textContent = 'Download as Image';
-          downloadButton.onclick = () => {
-              downloadAsImage(card, style.name);
-          };
+      const downloadButton = document.createElement('button');
+      downloadButton.className = 'btn btn-sm btn-outline-success action-btn';
+      downloadButton.textContent = 'Download as Image';
+      downloadButton.onclick = () => {
+        downloadAsImage(card, style.name);
+      };
 
-          buttonGroup.appendChild(copyButton);
-          buttonGroup.appendChild(downloadButton);
-          cardHeader.appendChild(buttonGroup);
+      buttonGroup.appendChild(copyButton);
+      buttonGroup.appendChild(downloadButton);
+      cardHeader.appendChild(buttonGroup);
 
-          const cardBody = document.createElement('div');
-          cardBody.className = 'card-body d-flex align-items-center justify-content-center';
+      const cardBody = document.createElement('div');
+      cardBody.className = 'card-body d-flex align-items-center justify-content-center';
 
-          const previewText = document.createElement('p');
-          previewText.className = 'mb-0 preview-text text-center';
-          previewText.textContent = text;
+      const previewText = document.createElement('p');
+      previewText.className = 'mb-0 preview-text text-center';
+      previewText.textContent = text;
 
-          cardBody.appendChild(previewText);
-          card.appendChild(cardHeader);
-          card.appendChild(cardBody);
-          previewBox.appendChild(card);
+      cardBody.appendChild(previewText);
+      card.appendChild(cardHeader);
+      card.appendChild(cardBody);
+      previewBox.appendChild(card);
 
-          return previewBox;
-      }
+      return previewBox;
+    }
 
-      function downloadAsImage(element, styleName) {
-          html2canvas(element).then(canvas => {
-              const link = document.createElement('a');
-              link.download = `${styleName.replace(/\s+/g, '-').toLowerCase()}-text.png`;
-              link.href = canvas.toDataURL();
-              link.click();
-          });
-      }
-
-      const inputText = document.getElementById('inputText');
-      const previewContainer = document.getElementById('previewContainer');
-
-      inputText.addEventListener('input', function() {
-          const text = this.value || 'Preview Text';
-          previewContainer.innerHTML = '';
-
-          fontCategories.forEach(category => {
-              const categorySection = createCategorySection(category);
-              const container = categorySection.querySelector('.preview-container');
-
-              category.styles.forEach(style => {
-                  const fancyText = generateFancyText(text, style);
-                  container.appendChild(createPreviewBox(style, fancyText));
-              });
-
-              previewContainer.appendChild(categorySection);
-          });
+    function downloadAsImage(element, styleName) {
+      html2canvas(element).then(canvas => {
+        const link = document.createElement('a');
+        link.download = `${styleName.replace(/\s+/g, '-').toLowerCase()}-text.png`;
+        link.href = canvas.toDataURL();
+        link.click();
       });
+    }
 
-      // Initial generation
-      inputText.dispatchEvent(new Event('input'));
+    const inputText = document.getElementById('inputText');
+    const previewContainer = document.getElementById('previewContainer');
+
+    inputText.addEventListener('input', function () {
+      const text = this.value || 'Preview Text';
+      previewContainer.innerHTML = '';
+
+      fontCategories.forEach(category => {
+        const categorySection = createCategorySection(category);
+        const container = categorySection.querySelector('.preview-container');
+
+        category.styles.forEach(style => {
+          const fancyText = generateFancyText(text, style);
+          container.appendChild(createPreviewBox(style, fancyText));
+        });
+
+        previewContainer.appendChild(categorySection);
+      });
+    });
+
+    // Initial generation
+    inputText.dispatchEvent(new Event('input'));
   </script>
 
   <h3>How to Write a Cursive Capital A</h3>
@@ -784,6 +799,13 @@
 
   <p> </p>
 
+
+  <p>
+
+    <img src="https://fancyletters.org/images/how-to-write-a-in-cursive.webp" width="40%" height="auto" alt="how to wirte a in cursive"/>
+
+  </p>
+
   <div class="schema-faq-code" itemscope="" itemtype="https://schema.org/FAQPage">
     <div itemscope="" itemprop="mainEntity" itemtype="https://schema.org/Question" class="faq-question">
       <h3 itemprop="name" class="faq-q">How do I write a cursive capital 'A'?</h3>
@@ -834,6 +856,7 @@
 
   </p>
 
+  
 
   <p>When you're learning how to write a in cursive, it's crucial to focus on the basic strokes and fluidity. Start by
     understanding how to make a cursive a, ensuring that your lines are smooth and connected. Practicing the capital A
