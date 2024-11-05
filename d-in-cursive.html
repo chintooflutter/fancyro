@@ -524,6 +524,12 @@
       container.className = 'preview-container';
       section.appendChild(container);
 
+      // Add 3 lines of space after the preview container
+
+      const spacer = document.createElement('div');
+      spacer.style.height = '3em'; // 3 lines of space
+      section.appendChild(spacer);
+
       return section;
     }
 
@@ -535,14 +541,21 @@
       card.className = 'card h-100';
 
       const cardHeader = document.createElement('div');
-      cardHeader.className = 'card-header d-flex justify-content-between align-items-center';
+      cardHeader.className = 'card-header';
       cardHeader.innerHTML = `<h5 class="mb-0 fs-6">${style.name}</h5>`;
 
+      const cardBody = document.createElement('div');
+      cardBody.className = 'card-body d-flex flex-column';
+
+      const previewText = document.createElement('p');
+      previewText.className = 'mb-3 preview-text text-center flex-grow-1';
+      previewText.textContent = text;
+
       const buttonGroup = document.createElement('div');
-      buttonGroup.className = 'btn-group';
+      buttonGroup.className = 'd-flex flex-wrap justify-content-between gap-2';
 
       const copyButton = document.createElement('button');
-      copyButton.className = 'btn btn-sm btn-outline-primary action-btn';
+      copyButton.className = 'btn btn-sm btn-outline-primary flex-grow-1';
       copyButton.textContent = 'Copy';
       copyButton.onclick = () => {
         navigator.clipboard.writeText(text);
@@ -551,24 +564,17 @@
       };
 
       const downloadButton = document.createElement('button');
-      downloadButton.className = 'btn btn-sm btn-outline-success action-btn';
-      downloadButton.textContent = 'Download as Image';
+      downloadButton.className = 'btn btn-sm btn-outline-success flex-grow-1';
+      downloadButton.textContent = 'Download';
       downloadButton.onclick = () => {
         downloadAsImage(card, style.name);
       };
 
       buttonGroup.appendChild(copyButton);
       buttonGroup.appendChild(downloadButton);
-      cardHeader.appendChild(buttonGroup);
-
-      const cardBody = document.createElement('div');
-      cardBody.className = 'card-body d-flex align-items-center justify-content-center';
-
-      const previewText = document.createElement('p');
-      previewText.className = 'mb-0 preview-text text-center';
-      previewText.textContent = text;
 
       cardBody.appendChild(previewText);
+      cardBody.appendChild(buttonGroup);
       card.appendChild(cardHeader);
       card.appendChild(cardBody);
       previewBox.appendChild(card);
